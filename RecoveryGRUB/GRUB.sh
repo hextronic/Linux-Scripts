@@ -76,10 +76,6 @@ printf "  \e[101m\e[1;77m:: responsible for any misuse or damage caused by RECOV
 printf " \n"
 }
 
-grubtools(){
-loading
-clear
-
 sudo su
 mount /dev/sda3 /mnt 
 mount /dev/sda1 /mnt/boot
@@ -94,8 +90,6 @@ chroot /mnt
 mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=archlabs --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
-}
 
 banner
 dependencies
-grubtools
