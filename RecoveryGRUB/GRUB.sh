@@ -92,6 +92,8 @@ mount -t devpts pts /mnt/dev/pts
 modprobe efivarfs
 chroot /mnt
 mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=archlabs --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 banner
